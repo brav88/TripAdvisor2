@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
+using TripAdvisor2.Controllers;
 
 namespace TripAdvisor2
 {
@@ -11,7 +13,12 @@ namespace TripAdvisor2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblName.InnerText = "John Doe";            
 
+            ResortsController resortsController = new ResortsController();
+
+            repResorts.DataSource = resortsController.GetResorts();
+            repResorts.DataBind();
         }
     }
 }
