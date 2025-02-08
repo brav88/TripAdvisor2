@@ -8,7 +8,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lux/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lux/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -23,7 +23,7 @@
                     <div class="collapse navbar-collapse" id="navbarColor02">
                         <ul class="navbar-nav me-auto">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Home
+                                <a class="nav-link active" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">Login
                                     <span class="visually-hidden">(current)</span>
                                 </a>
                             </li>
@@ -46,7 +46,7 @@
                                     <a class="dropdown-item" href="#">Separated link</a>
                                 </div>
                             </li>
-                        </ul>                      
+                        </ul>
                     </div>
                 </div>
             </nav>
@@ -72,7 +72,31 @@
                         </ItemTemplate>
                         <FooterTemplate></FooterTemplate>
                     </asp:Repeater>
+                </div>
+            </div>
 
+            <%--OFF CANVA--%>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Login</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="card shadow-lg p-4">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input runat="server" type="email" id="txtEmail" name="Email" class="form-control" required="required" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input runat="server" type="password" id="txtPwd" name="Password" class="form-control" required="required" />
+                        </div>
+                        <button id="btnLogin" runat="server" type="submit" class="btn btn-primary w-100" onserverclick="btnLogin_ServerClick">Login</button>
+
+                        <div class="text-center mt-3">
+                            <a>Don't have an account? Sign up</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

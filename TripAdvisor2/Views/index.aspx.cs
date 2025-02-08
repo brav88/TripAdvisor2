@@ -18,7 +18,21 @@ namespace TripAdvisor2
             ResortsController resortsController = new ResortsController();
 
             repResorts.DataSource = resortsController.GetResorts();
-            repResorts.DataBind();
+            repResorts.DataBind();            
         }
-    }
+
+		protected void btnLogin_ServerClick(object sender, EventArgs e)
+		{
+            string email = txtEmail.Value;
+			string pwd = txtPwd.Value;
+
+            if(email == "brav88@hotmail.com")
+            {
+                if (pwd == "Admin$1234")
+                {
+					lblName.InnerText = "Braulio";
+				}
+            }
+		}
+	}
 }
