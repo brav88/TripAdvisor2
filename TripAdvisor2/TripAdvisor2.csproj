@@ -69,13 +69,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\Scripts\InsertResorts.sql" />
+    <Content Include="Database\StoredProcedures\GetResorts.sql" />
     <Content Include="Database\Tables\Resorts.sql" />
+    <Content Include="Views\booking.aspx" />
     <Content Include="Views\index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ResortsController.cs" />
+    <Compile Include="Database\DatabaseHelper.cs" />
+    <Compile Include="Firebase\Authentication.cs" />
     <Compile Include="Model\Resort.cs" />
+    <Compile Include="Views\booking.aspx.cs">
+      <DependentUpon>booking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\booking.aspx.designer.cs">
+      <DependentUpon>booking.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -93,6 +104,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

@@ -37,4 +37,14 @@ INSERT INTO [dbo].[Resorts]
            ,'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/e6/0b/35/exterior.jpg?w=700&h=-1&s=1')
 GO
 
-
+INSERT INTO [dbo].[Resorts]
+           ([name]
+           ,[description]
+           ,[price]
+           ,[photo])
+     VALUES
+           ('Hotel Arenas Playa Mantas'
+           ,'Hotel Arenas Playa Mantas es tu hotel en playa de Jaco, Garabito. Reserva en la web oficial de RIU Hotels & Resorts. Mejor precio garantizado'
+           ,299
+           ,'https://cf.bstatic.com/xdata/images/hotel/max1024x768/42495699.jpg?k=18cfebc87b8695628615f768c46dd13e8b70e55dcd90d76280ab9c50ee28a678&o=&hp=1')
+GO

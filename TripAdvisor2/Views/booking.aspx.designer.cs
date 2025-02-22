@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace TripAdvisor2
+namespace TripAdvisor2.Views
 {
 
 
-	public partial class index
+	public partial class booking
 	{
 
 		/// <summary>
@@ -24,24 +24,6 @@ namespace TripAdvisor2
 		protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
 		/// <summary>
-		/// Control actionLogout.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlAnchor actionLogout;
-
-		/// <summary>
-		/// Control divWelcome.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlGenericControl divWelcome;
-
-		/// <summary>
 		/// Control lblName.
 		/// </summary>
 		/// <remarks>
@@ -51,39 +33,30 @@ namespace TripAdvisor2
 		protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblName;
 
 		/// <summary>
-		/// Control repResorts.
+		/// Control imgResort.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Repeater repResorts;
+		protected global::System.Web.UI.HtmlControls.HtmlImage imgResort;
 
 		/// <summary>
-		/// Control txtEmail.
+		/// Control lblResortName.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEmail;
+		protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblResortName;
 
 		/// <summary>
-		/// Control txtPwd.
+		/// Control lblDescription.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlInputText txtPwd;
-
-		/// <summary>
-		/// Control btnLogin.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.HtmlControls.HtmlButton btnLogin;
+		protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblDescription;
 	}
 }

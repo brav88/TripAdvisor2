@@ -16,7 +16,7 @@
         <div>
             <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
+                    <a class="navbar-brand" href="index.aspx">Home - Trip Advisor</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -43,7 +43,7 @@
                                     <a class="dropdown-item" href="#">Another action</a>
                                     <a class="dropdown-item" href="#">Something else here</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
+                                    <a id="actionLogout" runat="server" onserverclick="actionLogout_ServerClick" class="dropdown-item" href="#">Logout</a>
                                 </div>
                             </li>
                         </ul>
@@ -52,8 +52,10 @@
             </nav>
 
             <div class="container" style="margin-top: 100px">
-                Welcome
-                <h1 id="lblName" runat="server"></h1>
+                
+                <div runat="server" id="divWelcome" hidden="hidden">
+                    Welcome <h1 id="lblName" runat="server"></h1>
+                </div>                
 
                 <div class="row row-cols-4">
                     <asp:Repeater ID="repResorts" runat="server">
@@ -65,7 +67,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title"><%#Eval("Name")%></h5>
                                         <p class="card-text"><%#Eval("Description")%></p>
-                                        <a href="#" class="btn btn-primary">Book $<%#Eval("Price")%></a>
+                                        <a href="booking.aspx?id=<%#Eval("Id")%>" class="btn btn-primary">Book $<%#Eval("Price")%></a>
                                     </div>
                                 </div>
                             </div>
@@ -85,11 +87,11 @@
                     <div class="card shadow-lg p-4">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input runat="server" type="email" id="txtEmail" name="Email" class="form-control" required="required" />
+                            <input runat="server" type="email" id="txtEmail" name="Email" class="form-control" required="required" value="brav88@hotmail.com" />
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input runat="server" type="password" id="txtPwd" name="Password" class="form-control" required="required" />
+                            <input runat="server" type="text" id="txtPwd" name="Password" class="form-control" required="required" value="Admin$1234"/>
                         </div>
                         <button id="btnLogin" runat="server" type="submit" class="btn btn-primary w-100" onserverclick="btnLogin_ServerClick">Login</button>
 

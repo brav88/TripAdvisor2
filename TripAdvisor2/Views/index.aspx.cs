@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml.Linq;
 using TripAdvisor2.Controllers;
+using TripAdvisor2.Model;
 
 namespace TripAdvisor2
 {
@@ -13,26 +14,45 @@ namespace TripAdvisor2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblName.InnerText = "John Doe";            
+			if (Session["email"] != null)
+			{
+				showWelcome();
+			}
 
-            ResortsController resortsController = new ResortsController();
+			ResortsController resortsController = new ResortsController();
+			List<Resort> resorts = resortsController.GetResorts();
 
-            repResorts.DataSource = resortsController.GetResorts();
-            repResorts.DataBind();            
-        }
+			Session["resorts"] = resorts;
+			repResorts.DataSource = resorts;
+			repResorts.DataBind();
+		}
 
 		protected void btnLogin_ServerClick(object sender, EventArgs e)
 		{
-            string email = txtEmail.Value;
-			string pwd = txtPwd.Value;
-
-            if(email == "brav88@hotmail.com")
+            if (!string.IsNullOrEmpty(txtEmail.Value) && !string.IsNullOrEmpty(txtPwd.Value))
             {
-                if (pwd == "Admin$1234")
-                {
-					lblName.InnerText = "Braulio";
+				if (Firebase.Authentication.signInWithPassword(true, txtEmail.Value, txtPwd.Value))
+				{
+					Session["email"] = txtEmail.Value;
+					showWelcome();
 				}
-            }
+				else
+				{
+					//Error
+				}
+			}
+		}
+
+		public void showWelcome()
+		{
+			divWelcome.Attributes.Remove("hidden");
+			lblName.InnerText = txtEmail.Value;
+		}
+
+		protected void actionLogout_ServerClick(object sender, EventArgs e)
+		{
+			Session.Clear();
+			Response.Redirect("index.aspx");
 		}
 	}
 }
