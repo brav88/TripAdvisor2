@@ -94,13 +94,13 @@
                                         <label for="txtAdults" class="fw-bold text-muted d-block">
                                             <i class="fa-solid fa-people-group text-primary"></i>Adults
                                         </label>
-                                        <input type="number" value="2" max="5" min="1" class="form-control text-center rounded-3" id="txtAdults" />
+                                        <input type="number" value="2" max="5" min="1" class="form-control text-center rounded-3" id="txtAdults" onchange="calcPeople()" />
                                     </div>
                                     <div class="col">
                                         <label for="txtKids" class="fw-bold text-muted d-block">
                                             <i class="fa-solid fa-children text-primary"></i>Kids
                                         </label>
-                                        <input type="number" value="0" max="4" min="0" class="form-control text-center rounded-3" id="txtKids" />
+                                        <input type="number" value="0" max="4" min="0" class="form-control text-center rounded-3" id="txtKids" onchange="calcPeople()" />
                                     </div>
                                     <div class="col">
                                         <label for="txtRooms" class="fw-bold text-muted d-block">
@@ -115,13 +115,18 @@
                                 <!-- Booking Summary -->
                                 <div class="row g-3 text-center">
                                     <div class="col">
-                                        <h5 class="text-muted fw-bold"> <label id="lblNights">2</label> Nights <i class="fa-solid fa-moon text-primary"></i>for 5 people</h5>
+                                        <h5 class="text-muted fw-bold">
+                                            <label id="lblNights">2</label>
+                                            Nights <i class="fa-solid fa-moon text-primary"></i>
+                                            for 
+                                            <label id="lblPeople">2</label>
+                                            people</h5>
                                     </div>
                                     <div class="col">
                                         <h5 class="text-muted fw-bold"><i class="fa-solid fa-money-bill-trend-up"></i>Taxes: $25</h5>
                                     </div>
                                     <div class="col">
-                                        <h4 class="fw-bold"><i class="fa-solid fa-money-check-dollar"></i>$789</h4>
+                                        <h4 class="fw-bold"><i class="fa-solid fa-money-check-dollar"></i>$<label id="lblTotal" runat="server"></label></h4>
                                     </div>
                                 </div>
 

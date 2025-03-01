@@ -31,6 +31,7 @@ namespace TripAdvisor2.Views
 					lblDescription.InnerText = item.Description;
 					imgResort.Attributes.Add("src", item.Photo);
 					lblPrice.InnerText = item.Price.ToString();
+					lblTotal.InnerText = item.Price.ToString();
 				}
 			}
 		}
