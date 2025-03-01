@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\js\site.js" />
     <Content Include="Database\Scripts\InsertResorts.sql" />
     <Content Include="Database\StoredProcedures\GetResorts.sql" />
     <Content Include="Database\Tables\Resorts.sql" />

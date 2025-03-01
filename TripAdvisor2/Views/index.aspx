@@ -52,18 +52,19 @@
             </nav>
 
             <div class="container" style="margin-top: 100px">
-                
+
                 <div runat="server" id="divWelcome" hidden="hidden">
-                    Welcome <h1 id="lblName" runat="server"></h1>
-                </div>                
+                    Welcome
+                    <h1 id="lblName" runat="server"></h1>
+                </div>
 
                 <div class="row row-cols-4">
                     <asp:Repeater ID="repResorts" runat="server">
                         <HeaderTemplate></HeaderTemplate>
                         <ItemTemplate>
-                            <div class="col">
-                                <div class="card" style="width: 18rem;">
-                                    <img style="height: 250px; width: 18rem" src="<%#Eval("Photo")%>" class="card-img-top" alt="..." />
+                            <div class="col">                                
+                                <div class="card shadow-lg border-0 rounded-4"  style="width: 18rem;height: 32rem;">
+                                    <img style="height: 250px; width: 18rem;" src="<%#Eval("Photo")%>" class="card-img-top rounded-1" alt="..." />
                                     <div class="card-body">
                                         <h5 class="card-title"><%#Eval("Name")%></h5>
                                         <p class="card-text"><%#Eval("Description")%></p>
@@ -84,20 +85,41 @@
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <div class="card shadow-lg p-4">
+                    <div runat="server" id="divLogin" class="card shadow-lg p-4">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input runat="server" type="email" id="txtEmail" name="Email" class="form-control" required="required" value="brav88@hotmail.com" />
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input runat="server" type="text" id="txtPwd" name="Password" class="form-control" required="required" value="Admin$1234"/>
+                            <input runat="server" type="text" id="txtPwd" name="Password" class="form-control" required="required" value="Admin$1234" />
                         </div>
                         <button id="btnLogin" runat="server" type="submit" class="btn btn-primary w-100" onserverclick="btnLogin_ServerClick">Login</button>
 
                         <div class="text-center mt-3">
                             <a>Don't have an account? Sign up</a>
                         </div>
+                    </div>
+
+                    <div runat="server" id="divUserLogged" class="card shadow-lg p-4" hidden="hidden">
+                        <div class="form-group">
+                            <div class="card" style="border-radius: 15px;">
+                                <div class="card-body p-4">
+                                    <div class="row">
+                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                                            alt="Generic placeholder image" class="img-fluid"
+                                            style="width: 180px; border-radius: 10px;" />
+                                        <div class="row">
+                                            <h5 id="H1" runat="server" class="mb-1"></h5>
+                                            <div class="d-flex pt-1">
+                                                <button type="button" class="btn btn-outline-primary me-1 flex-grow-1">View profile</button>
+                                                <button id="btnLogout" runat="server" type="button" class="btn btn-primary flex-grow-1" onserverclick="actionLogout_ServerClick">Logout</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
                     </div>
                 </div>
             </div>

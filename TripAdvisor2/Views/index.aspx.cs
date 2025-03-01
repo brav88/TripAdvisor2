@@ -45,6 +45,8 @@ namespace TripAdvisor2
 
 		public void showWelcome()
 		{
+			divLogin.Attributes.Add("hidden", "hidden");
+			divUserLogged.Attributes.Remove("hidden");
 			divWelcome.Attributes.Remove("hidden");
 			lblName.InnerText = txtEmail.Value;
 		}
