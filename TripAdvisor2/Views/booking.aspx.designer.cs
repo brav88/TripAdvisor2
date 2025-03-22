@@ -69,6 +69,51 @@ namespace TripAdvisor2.Views
 		protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblPrice;
 
 		/// <summary>
+		/// Control DateIn.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl DateIn;
+
+		/// <summary>
+		/// Control DateOut.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl DateOut;
+
+		/// <summary>
+		/// Control txtAdults.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtAdults;
+
+		/// <summary>
+		/// Control txtKids.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtKids;
+
+		/// <summary>
+		/// Control txtRooms.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtRooms;
+
+		/// <summary>
 		/// Control lblTotal.
 		/// </summary>
 		/// <remarks>
@@ -76,5 +121,14 @@ namespace TripAdvisor2.Views
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
 		protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblTotal;
+
+		/// <summary>
+		/// Control btnSaveBooking.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlButton btnSaveBooking;
 	}
 }

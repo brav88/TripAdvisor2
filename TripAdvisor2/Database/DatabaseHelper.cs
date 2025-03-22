@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using TripAdvisor2.Model;
 
 namespace TripAdvisor2.Database
 {
@@ -16,8 +17,47 @@ namespace TripAdvisor2.Database
 
 		public DataTable GetResorts()
 		{
-			string procedure = "[dbo].[GetResorts]";
-			return Execute(procedure);
+			return Execute("[dbo].[getResorts]");
+		}
+
+		public void saveBooking(Booking booking)
+		{
+			List<SqlParameter> paramList = new List<SqlParameter>();
+
+			paramList.Add(new SqlParameter("@resort_id", booking.ResortId));
+			paramList.Add(new SqlParameter("@email", booking.Email));
+			paramList.Add(new SqlParameter("@checkin", booking.Checkin));
+			paramList.Add(new SqlParameter("@checkout", booking.Checkout));
+			paramList.Add(new SqlParameter("@adults", booking.Adults));
+			paramList.Add(new SqlParameter("@kids", booking.Kids));
+			paramList.Add(new SqlParameter("@rooms", booking.Rooms));
+			paramList.Add(new SqlParameter("@total_cost", booking.TotalCost));
+
+			ExecuteUpdate("[dbo].[saveBooking]", paramList);
+		}
+
+		public void ExecuteUpdate(string procedure, List<SqlParameter> paramList)
+		{
+			try
+			{
+				using (this.cnn)
+				{
+					cnn.Open();
+					SqlCommand cmd = cnn.CreateCommand();
+					cmd.CommandType = CommandType.StoredProcedure;
+					cmd.CommandText = procedure;
+					
+					foreach (SqlParameter param in paramList)
+					{
+						cmd.Parameters.Add(param);
+					}
+
+					cmd.ExecuteNonQuery();					
+				}
+			}
+			catch
+			{				
+			}
 		}
 
 		public DataTable Execute(string procedure)

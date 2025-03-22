@@ -78,10 +78,10 @@
                                     <h5 class="fw-bold"><i class="fa-solid fa-calendar-days text-primary"></i>Your booking dates</h5>
                                     <div class="row g-2">
                                         <div class="col">
-                                            <input type="date" class="form-control rounded-3" id="DateIn" />
+                                            <input runat="server" type="date" class="form-control rounded-3" id="DateIn" />
                                         </div>
                                         <div class="col">
-                                            <input type="date" class="form-control rounded-3" id="DateOut" onchange="calcNights()" />
+                                            <input runat="server" type="date" class="form-control rounded-3" id="DateOut" onchange="calcNights()" />
                                         </div>
                                     </div>
                                 </div>
@@ -94,19 +94,19 @@
                                         <label for="txtAdults" class="fw-bold text-muted d-block">
                                             <i class="fa-solid fa-people-group text-primary"></i>Adults
                                         </label>
-                                        <input type="number" value="2" max="5" min="1" class="form-control text-center rounded-3" id="txtAdults" onchange="calcPeople()" />
+                                        <input runat="server" type="number" value="2" max="5" min="1" class="form-control text-center rounded-3" id="txtAdults" onchange="calcPeople()" />
                                     </div>
                                     <div class="col">
                                         <label for="txtKids" class="fw-bold text-muted d-block">
                                             <i class="fa-solid fa-children text-primary"></i>Kids
                                         </label>
-                                        <input type="number" value="0" max="4" min="0" class="form-control text-center rounded-3" id="txtKids" onchange="calcPeople()" />
+                                        <input runat="server" type="number" value="0" max="4" min="0" class="form-control text-center rounded-3" id="txtKids" onchange="calcPeople()" />
                                     </div>
                                     <div class="col">
                                         <label for="txtRooms" class="fw-bold text-muted d-block">
                                             <i class="fa-solid fa-house text-primary"></i>Rooms
                                         </label>
-                                        <input type="number" value="2" max="4" min="1" class="form-control text-center rounded-3" id="txtRooms" />
+                                        <input runat="server" type="number" value="2" max="4" min="1" class="form-control text-center rounded-3" id="txtRooms" />
                                     </div>
                                 </div>
 
@@ -131,7 +131,7 @@
                                 </div>
 
                                 <div class="text-center mt-4">
-                                    <button class="btn btn-lg btn-primary px-4 fw-bold shadow-sm">
+                                    <button id="btnSaveBooking" runat="server" class="btn btn-lg btn-primary px-4 fw-bold shadow-sm" onserverclick="btnSaveBooking_ServerClick">
                                         Confirm Booking                       
                                     </button>
                                 </div>
