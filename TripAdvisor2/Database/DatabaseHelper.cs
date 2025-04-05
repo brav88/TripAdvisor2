@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using TripAdvisor2.Model;
+using TripAdvisor2.Views;
 
 namespace TripAdvisor2.Database
 {
@@ -17,10 +18,19 @@ namespace TripAdvisor2.Database
 
 		public DataTable GetResorts()
 		{
-			return Execute("[dbo].[getResorts]");
+			return Execute("[dbo].[getResorts]", null);
 		}
 
-		public void saveBooking(Booking booking)
+		public DataTable GetBookings(string email)
+		{
+			List<SqlParameter> paramList = new List<SqlParameter>();
+
+			paramList.Add(new SqlParameter("@email", email));
+
+			return Execute("[dbo].[getBookings]", paramList);
+		}
+
+		public void SaveBooking(Booking booking)
 		{
 			List<SqlParameter> paramList = new List<SqlParameter>();
 
@@ -36,6 +46,15 @@ namespace TripAdvisor2.Database
 			ExecuteUpdate("[dbo].[saveBooking]", paramList);
 		}
 
+		public void DeleteBooking(int id)
+		{
+			List<SqlParameter> paramList = new List<SqlParameter>();
+
+			paramList.Add(new SqlParameter("@id", id));			
+
+			ExecuteUpdate("[dbo].[deleteBooking]", paramList);
+		}
+
 		public void ExecuteUpdate(string procedure, List<SqlParameter> paramList)
 		{
 			try
@@ -47,10 +66,13 @@ namespace TripAdvisor2.Database
 					cmd.CommandType = CommandType.StoredProcedure;
 					cmd.CommandText = procedure;
 					
-					foreach (SqlParameter param in paramList)
+					if (paramList != null)
 					{
-						cmd.Parameters.Add(param);
-					}
+						foreach (SqlParameter param in paramList)
+						{
+							cmd.Parameters.Add(param);
+						}
+					}					
 
 					cmd.ExecuteNonQuery();					
 				}
@@ -60,7 +82,7 @@ namespace TripAdvisor2.Database
 			}
 		}
 
-		public DataTable Execute(string procedure)
+		public DataTable Execute(string procedure, List<SqlParameter> paramList)
 		{
 			try
 			{
@@ -70,6 +92,15 @@ namespace TripAdvisor2.Database
 					SqlCommand cmd = cnn.CreateCommand();
 					cmd.CommandType = CommandType.StoredProcedure;
 					cmd.CommandText = procedure;
+
+					if (paramList != null)
+					{
+						foreach (SqlParameter param in paramList)
+						{
+							cmd.Parameters.Add(param);
+						}
+					}
+
 					cmd.ExecuteNonQuery();
 
 					DataTable dt = new DataTable();	

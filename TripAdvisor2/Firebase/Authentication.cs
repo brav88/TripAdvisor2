@@ -11,7 +11,7 @@ namespace TripAdvisor2.Firebase
 {
 	public static class Authentication
 	{
-		static string apiWeb = "";
+		static string apiWeb = "AIzaSyDRP8QQqUI1qsG8Py3o8VfT0Vm-26Np2RM";
 		static string url = string.Empty;
 		static string urlSign = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + apiWeb;
 		static string urlSignUp = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + apiWeb;

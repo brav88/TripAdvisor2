@@ -70,12 +70,15 @@
   <ItemGroup>
     <Content Include="Assets\js\site.js" />
     <Content Include="Database\Scripts\InsertResorts.sql" />
+    <Content Include="Database\StoredProcedures\deleteBooking.sql" />
+    <Content Include="Database\StoredProcedures\getBookings.sql" />
     <Content Include="Database\StoredProcedures\saveBooking.sql" />
     <Content Include="Database\StoredProcedures\getResorts.sql" />
     <Content Include="Database\Tables\Bookings.sql" />
     <Content Include="Database\Tables\Resorts.sql" />
     <Content Include="Views\booking.aspx" />
     <Content Include="Views\index.aspx" />
+    <Content Include="Views\mybookings.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +103,13 @@
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\mybookings.aspx.cs">
+      <DependentUpon>mybookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\mybookings.aspx.designer.cs">
+      <DependentUpon>mybookings.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

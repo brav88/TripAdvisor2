@@ -5,8 +5,9 @@ using System.Web;
 
 namespace TripAdvisor2.Model
 {
-	public class Booking
+	public class Booking : Resort
 	{
+		public int Id { get; set; }
 		public int ResortId { get; set; }
 		public string Email { get; set; }
 		public DateTime Checkin { get; set; }
